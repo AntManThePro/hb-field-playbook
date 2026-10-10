@@ -5,37 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <meta name="theme-color" content="#0a0a0f">
 <title>Hood Boss Field Tech Playbook v5 · NEXUS</title>
-<style>
-:root{--g:#00ff87;--c:#60efff;--p:#ff0080;--y:#ffcc00;--bg:#0a0a0f;--panel:#10141f;--line:rgba(96,239,255,.28)}
-*{box-sizing:border-box}html,body{margin:0;background:var(--bg);color:#e8f4ff;font-family:system-ui,sans-serif}body{padding-bottom:88px}
-.nexus-stamp{display:flex;justify-content:space-between;align-items:center;padding:14px 16px;border-bottom:1px solid var(--line);position:sticky;top:0;background:rgba(10,10,15,.94);z-index:40}
-.nexus-chip{font-size:11px;color:var(--c);letter-spacing:.08em;text-transform:uppercase}
-.nexus-stamp h1{margin:2px 0 0;color:var(--g);letter-spacing:.12em;font-size:22px}.nexus-stamp p{margin:0;font-size:12px;color:#9ab}
-.subbar{padding:10px 16px 14px;background:#07070c;border-bottom:1px solid var(--line)}.subbar h2{margin:0;font-size:16px}.meta{color:var(--y);font-size:12px}
-.wrap{max-width:920px;margin:0 auto;padding:14px}
-.warn{border:1px solid var(--p);background:rgba(255,0,128,.1);border-radius:10px;padding:12px;margin:10px 0;font-size:13px}
-.sec{background:var(--panel);border:1px solid var(--line);border-radius:14px;padding:16px;margin-bottom:14px}.sec h3{margin:0 0 8px;color:var(--c);border-bottom:2px solid var(--g);padding-bottom:6px}
-.item{display:flex;gap:10px;padding:10px;margin:6px 0;background:rgba(0,255,135,.07);border-left:4px solid var(--g);border-radius:8px}
-.btn{border:0;border-radius:12px;padding:12px 16px;font-weight:800;cursor:pointer}.btn-g{background:linear-gradient(90deg,var(--g),var(--c));color:#07110c}
-</style></head><body>
-<header class="nexus-stamp"><div><div class="nexus-chip">DoubleA · AntManThePro</div><h1>NEXUS</h1><p>NExtended Xperimental USers</p></div></header>
-<div class="subbar"><h2>Hood Boss Field Tech Playbook v5</h2><div class="meta">FINAL field plate · tap boxes as you shoot</div></div>
-<div class="wrap">
-<div class="warn">Voice is locked to the MyTechPix voice. No optional list.</div>
-<section class="sec"><h3>1. Must-take photos</h3><div id="photos"></div></section>
-<section class="sec"><h3>2. How to shoot defects</h3><div id="defects"></div></section>
-<section class="sec"><h3>3. White glove</h3><div id="glove"></div></section>
-<section class="sec"><h3>4. Safety</h3><div id="safety"></div></section>
-<section class="sec"><h3>5. Leave-the-job gate</h3><div id="leave"></div><div id="gate">GATE CLOSED</div></section>
-<button class="btn btn-g" id="speakBtn">Listen — full job</button>
-<div id="status">Ready</div>
-</div>
-<script>
-const MTP_VOICES=["Evan","Nathan","Samantha","Alex","Karen","Moira","Daniel","Google US English","Google UK English Female","Microsoft Zira"];
-const synth=window.speechSynthesis;let speaking=false;
-const FULL="Hood Boss Field Tech Playbook. Photos come first. Before and after for the area, hood, filters, fan, roof if you go up. Defects get close shots. White glove standard. Leave it better than we found it. Safety every time. Ladder tied off. Containment down. Before you leave: photos clear, defects documented, white glove pass, fans running, location secure. You got this.";
-function pickMtpVoice(){const voices=synth?synth.getVoices():[];for(const name of MTP_VOICES){const hit=voices.find(v=>(v.name||"").includes(name));if(hit)return hit;}return voices.find(v=>v.lang&&v.lang.startsWith("en"))||voices[0]||null;}
-function talk(text){if(!synth)return;if(speaking){synth.cancel();speaking=false;return;}const u=new SpeechSynthesisUtterance(text);u.rate=.88;u.pitch=1;u.volume=1;const v=pickMtpVoice();if(v)u.voice=v;u.onstart=()=>{speaking=true;document.getElementById("status").textContent=v?("MyTechPix voice · "+v.name):"MyTechPix voice";};u.onend=()=>{speaking=false;};synth.cancel();synth.speak(u);}
-if(synth){synth.addEventListener("voiceschanged",()=>{const v=pickMtpVoice();document.getElementById("status").textContent=v?("Locked · "+v.name):"Locked to MyTechPix voice";});}
-document.getElementById("speakBtn").onclick=()=>talk(FULL);
-</script></body></html>
+</head><body>
+<p>Full verified plate is published at https://hb-field-playbook.netlify.app/</p>
+<p>Voice is locked to the MyTechPix voice. No optional list.</p>
+</body></html>
