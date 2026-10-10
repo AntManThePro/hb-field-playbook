@@ -3,8 +3,22 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-<title>Hood Boss Field Tech Playbook v5</title>
+<meta name="theme-color" content="#0a0a0f">
+<title>Hood Boss Field Tech Playbook v5 · NEXUS</title>
 </head>
 <body>
-<p>Verified plate follows in the next commit if this seed is required.</p>
+<header><h1>NEXUS</h1><p>Hood Boss Field Tech Playbook v5</p></header>
+<p>Voice is locked to the MyTechPix voice. No optional list.</p>
+<section><h3>1. Must-take photos</h3></section>
+<section><h3>2. How to shoot defects</h3></section>
+<section><h3>3. White glove</h3></section>
+<section><h3>4. Safety</h3></section>
+<section><h3>5. Leave-the-job gate</h3></section>
+<script>
+const MTP_VOICES=["Evan","Nathan","Samantha","Alex","Karen","Moira","Daniel","Google US English","Google UK English Female","Microsoft Zira"];
+const synth=window.speechSynthesis;
+function pickMtpVoice(){const voices=synth?synth.getVoices():[];for(const name of MTP_VOICES){const hit=voices.find(v=>(v.name||"").includes(name));if(hit)return hit;}return voices.find(v=>v.lang&&v.lang.startsWith("en"))||voices[0]||null;}
+function talk(){const u=new SpeechSynthesisUtterance("Hood Boss field plate. This is the MyTechPix voice.");u.rate=.88;u.pitch=1;const v=pickMtpVoice();if(v)u.voice=v;synth.cancel();synth.speak(u);}
+</script>
+<button onclick="talk()">Test voice</button>
 </body></html>
