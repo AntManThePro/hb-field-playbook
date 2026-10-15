@@ -1,0 +1,4 @@
+{"ts":"2026-10-15T07:42:00-05:00","crew":"jdoe","type":"no-show","sev":5,"note":"no call no show"}
+{"ts":"2026-10-15T07:45:00-05:00","crew":"msmith","type":"late","sev":3,"note":"22 min"}
+{"ts":"2026-10-15T08:01:00-05:00","crew":"rlee","type":"present","sev":1}
+{"ts":"2026-10-15T14:30:00-05:00","crew":"jdoe","type":"left early","sev":4,"note":"walked off site"}
